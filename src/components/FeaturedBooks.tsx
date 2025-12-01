@@ -111,15 +111,15 @@ export function FeaturedBooks() {
   };
 
   return (
-    <section id="featured" className="py-16 bg-white">
+    <section id="featured" className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        
+
         {/* Slider Container */}
-        <div 
+        <div
           ref={sliderRef}
           onScroll={handleScroll}
           className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide"
-          style={{ 
+          style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
           }}
@@ -130,13 +130,13 @@ export function FeaturedBooks() {
               className="min-w-[16rem] snap-start"
             >
               {/* CARD DESIGN */}
-              <div className="border border-gray-300 p-4 flex flex-col items-center bg-white h-full">
-                
+              <div className="border border-border p-4 flex flex-col items-center bg-card h-full">
+
                 {/* Image Section */}
                 <div className="w-full h-64 mb-4 overflow-hidden flex items-center justify-center">
-                  <img 
-                    src={book.image} 
-                    alt={book.title} 
+                  <img
+                    src={book.image}
+                    alt={book.title}
                     className="h-full object-contain"
                   />
                 </div>
@@ -144,32 +144,32 @@ export function FeaturedBooks() {
                 {/* Text Content */}
                 <div className="text-center w-full">
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-black mb-1">
+                  <h3 className="text-xl font-bold text-card-foreground mb-1">
                     {book.title}
                   </h3>
-                  
+
                   {/* Author */}
-                  <p className="text-gray-500 text-sm mb-1">
+                  <p className="text-muted-foreground text-sm mb-1">
                     {book.author}
                   </p>
-                  
+
                   {/* Categories (Teal Color) */}
-                  <p className="text-[#40E0D0] text-sm mb-3">
+                  <p className="text-primary text-sm mb-3">
                     {book.category}
                   </p>
-                  
+
                   {/* Price Section */}
                   <div className="flex justify-center items-center gap-2 mb-4">
-                    <span className="font-bold text-black text-lg">
+                    <span className="font-bold text-card-foreground text-lg">
                       ${book.price.toFixed(2)}
                     </span>
-                    <span className="text-gray-400 line-through text-sm decoration-gray-400">
+                    <span className="text-muted-foreground line-through text-sm decoration-muted-foreground">
                       ${book.originalPrice.toFixed(2)}
                     </span>
                   </div>
 
                   {/* Learn More Button */}
-                  <button className="border border-[#008080] text-[#008080] px-8 py-2 text-sm font-medium hover:bg-[#008080] hover:text-white transition-colors duration-300">
+                  <button className="border border-primary text-primary px-8 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
                     Learn More
                   </button>
                 </div>
@@ -180,12 +180,12 @@ export function FeaturedBooks() {
         </div>
 
         {/* Scroll Progress Bar */}
-        <div className="relative w-full h-1 bg-gray-200 mt-4 rounded-full overflow-hidden">
-          <div 
-            className="absolute top-0 left-0 h-full bg-teal-600 rounded-full transition-transform duration-100 ease-out"
-            style={{ 
-              width: '100%', 
-              transform: `translateX(-${100 - scrollProgress}%)` 
+        <div className="relative w-full h-1 bg-muted mt-4 rounded-full overflow-hidden">
+          <div
+            className="absolute top-0 left-0 h-full bg-primary rounded-full transition-transform duration-100 ease-out"
+            style={{
+              width: '100%',
+              transform: `translateX(-${100 - scrollProgress}%)`
             }}
           />
         </div>
