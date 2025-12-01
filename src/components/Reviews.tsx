@@ -37,21 +37,21 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-white">
+    <section id="reviews" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-black">Reviews</h2>
-        
+        <h2 className="text-4xl font-bold text-center mb-12 text-foreground">Reviews</h2>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reviews.map((review, index) => (
             <div
               key={index}
               // Card Container with Hover Effects matching your previous request
               className="
-                border border-[#00D2D3]/30 
-                bg-white p-6 
+                border border-primary/30 
+                bg-card p-6 
                 flex flex-col gap-4 
                 transition-all duration-300
-                hover:border-[#00D2D3] hover:border-2
+                hover:border-primary hover:border-2
                 hover:shadow-[0_0_20px_rgba(0,210,211,0.2)]
               "
             >
@@ -59,27 +59,27 @@ export function Reviews() {
               <div className="flex justify-between items-start">
                 {/* Circular Image */}
                 <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-transparent">
-                  <img 
-                    src={review.image} 
-                    alt={review.name} 
+                  <img
+                    src={review.image}
+                    alt={review.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                
+
                 {/* Big Quote Icon */}
-                <FontAwesomeIcon 
-                  icon={faQuoteRight} 
-                  className="text-6xl text-gray-200 opacity-60" 
+                <FontAwesomeIcon
+                  icon={faQuoteRight}
+                  className="text-6xl text-muted opacity-60"
                 />
               </div>
 
               {/* Name */}
-              <h3 className="text-xl font-bold text-black font-serif">
+              <h3 className="text-xl font-bold text-card-foreground font-serif">
                 {review.name}
               </h3>
 
               {/* Lorem Ipsum Text */}
-              <p className="text-gray-500 text-sm leading-relaxed text-justify">
+              <p className="text-muted-foreground text-sm leading-relaxed text-justify">
                 {review.text}
               </p>
 
@@ -91,12 +91,12 @@ export function Reviews() {
                     icon={faStar}
                     className={`text-sm ${
                       // Logic for full stars vs half stars if needed, or just all teal
-                      i < Math.floor(review.rating) 
-                        ? 'text-[#00D2D3]' 
-                        : (i === Math.floor(review.rating) && review.rating % 1 !== 0) 
-                          ? 'text-[#00D2D3]' // Simplification: Treating half star as colored for visual match
-                          : 'text-[#00D2D3]' // Image shows all stars colored (some half), setting all to teal
-                    }`}
+                      i < Math.floor(review.rating)
+                        ? 'text-primary'
+                        : (i === Math.floor(review.rating) && review.rating % 1 !== 0)
+                          ? 'text-primary' // Simplification: Treating half star as colored for visual match
+                          : 'text-primary' // Image shows all stars colored (some half), setting all to teal
+                      }`}
                   />
                 ))}
               </div>
