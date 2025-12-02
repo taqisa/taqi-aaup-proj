@@ -220,18 +220,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(222 47% 10%);
+  background-color: #089da1; /* Applied requested color */
   border-radius: 6px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(222 47% 20%);
+  background-color: #067d80; /* Slightly darker on hover */
 }
 
 /* For Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: hsl(222 47% 10%) transparent;
+  scrollbar-color: #089da1 transparent; /* Applied requested color */
 }
