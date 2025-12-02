@@ -9,44 +9,44 @@
     /* Core palette - Bookstore Teal Theme */
     --background: 0 0% 100%;
     --foreground: 210 29% 15%;
-    
+
     --card: 0 0% 100%;
     --card-foreground: 210 29% 15%;
-    
+
     --popover: 0 0% 100%;
     --popover-foreground: 210 29% 15%;
-    
+
     /* Primary Teal */
     --primary: 175 100% 32%;
     --primary-foreground: 0 0% 100%;
     --primary-light: 175 60% 95%;
-    
+
     /* Secondary - warm beige */
     --secondary: 40 30% 96%;
     --secondary-foreground: 210 29% 15%;
-    
+
     --muted: 210 20% 96%;
     --muted-foreground: 210 15% 45%;
-    
+
     /* Accent - warm orange for ratings */
     --accent: 35 95% 55%;
     --accent-foreground: 0 0% 100%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     --border: 210 20% 90%;
     --input: 210 20% 90%;
     --ring: 175 100% 32%;
-    
+
     --radius: 0.5rem;
-    
+
     /* Custom bookstore tokens */
     --hero-gradient: linear-gradient(135deg, hsl(175 60% 95%) 0%, hsl(0 0% 100%) 50%, hsl(40 30% 96%) 100%);
     --card-shadow: 0 0.25rem 1rem -0.25rem hsl(210 29% 15% / 0.1);
     --card-shadow-hover: 0 0.5rem 2rem -0.5rem hsl(175 100% 32% / 0.25);
     --feature-gradient: linear-gradient(180deg, hsl(175 60% 95%) 0%, hsl(0 0% 100%) 100%);
-    
+
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -61,38 +61,38 @@
   .dark {
     --background: 222 47% 8%;
     --foreground: 210 40% 96%;
-    
+
     --card: 222 47% 11%;
     --card-foreground: 210 40% 96%;
-    
+
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 96%;
-    
+
     --primary: 175 80% 45%;
     --primary-foreground: 222 47% 8%;
     --primary-light: 175 40% 15%;
-    
+
     --secondary: 222 35% 15%;
     --secondary-foreground: 210 40% 96%;
-    
+
     --muted: 222 35% 18%;
     --muted-foreground: 210 20% 60%;
-    
+
     --accent: 35 90% 50%;
     --accent-foreground: 222 47% 8%;
-    
+
     --destructive: 0 70% 45%;
     --destructive-foreground: 210 40% 96%;
-    
+
     --border: 222 35% 20%;
     --input: 222 35% 20%;
     --ring: 175 80% 45%;
-    
+
     --hero-gradient: linear-gradient(135deg, hsl(222 47% 10%) 0%, hsl(222 47% 8%) 50%, hsl(222 35% 12%) 100%);
     --card-shadow: 0 0.25rem 1rem -0.25rem hsl(0 0% 0% / 0.3);
     --card-shadow-hover: 0 0.5rem 2rem -0.5rem hsl(175 80% 45% / 0.35);
     --feature-gradient: linear-gradient(180deg, hsl(222 35% 12%) 0%, hsl(222 47% 8%) 100%);
-    
+
     --sidebar-background: 222 47% 10%;
     --sidebar-foreground: 210 40% 90%;
     --sidebar-primary: 175 80% 45%;
@@ -108,16 +108,21 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-background text-foreground font-body antialiased;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
@@ -126,40 +131,38 @@
   .section-container {
     @apply w-full max-w-[90rem] mx-auto px-[4%] md:px-[6%] lg:px-[8%];
   }
-  
+
   .section-title {
     @apply text-2xl md:text-3xl lg:text-4xl font-heading font-semibold text-foreground text-center mb-8 md:mb-12;
   }
-  
+
   .book-card {
     @apply bg-card rounded-lg overflow-hidden transition-all duration-300 ease-out;
     box-shadow: var(--card-shadow);
   }
-  
+
   .book-card:hover {
     box-shadow: var(--card-shadow-hover);
     transform: translateY(-0.25rem);
   }
-  
+
   .feature-badge {
     @apply flex flex-col items-center justify-center p-4 md:p-6 rounded-xl text-center transition-all duration-300;
     background: var(--feature-gradient);
     border: 1px solid hsl(var(--border));
   }
-  
+
   .feature-badge:hover {
     @apply border-primary/30;
     box-shadow: var(--card-shadow-hover);
   }
-  
+
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-6 py-2.5 rounded-md font-medium 
-           transition-all duration-300 hover:opacity-90 hover:shadow-lg;
+    @apply bg-primary text-primary-foreground px-6 py-2.5 rounded-md font-medium transition-all duration-300 hover:opacity-90 hover:shadow-lg;
   }
-  
+
   .btn-outline {
-    @apply border-2 border-primary text-primary px-6 py-2.5 rounded-md font-medium 
-           transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+    @apply border-2 border-primary text-primary px-6 py-2.5 rounded-md font-medium transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
   }
 }
 
@@ -167,44 +170,62 @@
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
-  
+
   .animate-slide-up {
     animation: slideUp 0.6s ease-out forwards;
   }
-  
+
   .animate-scale-in {
     animation: scaleIn 0.4s ease-out forwards;
   }
-  
+
   @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
-  
+
   @keyframes slideUp {
-    from { 
-      opacity: 0; 
-      transform: translateY(1.25rem); 
+    from {
+      opacity: 0;
+      transform: translateY(1.25rem);
     }
-    to { 
-      opacity: 1; 
-      transform: translateY(0); 
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
-  
+
   @keyframes scaleIn {
-    from { 
-      opacity: 0; 
-      transform: scale(0.95); 
+    from {
+      opacity: 0;
+      transform: scale(0.95);
     }
-    to { 
-      opacity: 1; 
-      transform: scale(1); 
+
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
   }
-  
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
+
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
 }
